@@ -63,7 +63,7 @@ export function Header() {
                 <span className="sr-only">Open navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="left" className="bg-white">
               <div className="flex flex-col h-full">
                 <div className="border-b pb-4">
                   <Link href="/" className="flex items-center gap-2">
@@ -83,7 +83,7 @@ export function Header() {
                     <SheetClose asChild key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-lg font-medium text-foreground/80 transition-colors hover:text-foreground"
+                        className="text-lg font-medium text-black transition-colors hover:text-black/80"
                       >
                         {link.label}
                       </Link>
@@ -91,11 +91,15 @@ export function Header() {
                   ))}
                 </nav>
                 <div className="mt-auto">
-                    <SheetClose asChild>
-                        <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                            <Link href="#book">Book Now</Link>
-                        </Button>
-                    </SheetClose>
+                  <SheetClose asChild>
+                    <Button
+                      asChild
+                      size="lg"
+                      className="w-full bg-red-500 hover:bg-red-500/80 font-medium text-md text-white"
+                    >
+                      <Link href="#book">Book Now</Link>
+                    </Button>
+                  </SheetClose>
                 </div>
               </div>
             </SheetContent>

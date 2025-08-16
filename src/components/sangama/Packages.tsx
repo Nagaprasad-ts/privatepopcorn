@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Users, Heart, Film } from "lucide-react";
+import { Users, Heart, Film, Check } from "lucide-react";
 
 import CoupleNest from "@/images/gallary_3.jpg";
 import gallaryThree from "@/images/gallary_2.jpg";
@@ -37,13 +37,13 @@ const packages = [
 
 export function Packages() {
   return (
-    <section id="packages" className="w-full py-12 md:py-24 lg:py-32 bg-primary/5">
+    <section id="packages" className="w-full py-12 md:py-24 lg:py-32 bg-slate-50">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-red-200 px-3 py-1 text-md text-red-600/90 font-semibold">Our Packages</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-red-600">Tailored for Your Moments</h2>
-            <p className="max-w-[900px] text-black/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-md text-red-600 font-semibold">Our Packages</div>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-gray-800">Tailored for Your Moments</h2>
+            <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Choose the perfect space for your celebration. Each package is designed to provide a unique and unforgettable experience.
             </p>
           </div>
@@ -52,30 +52,31 @@ export function Packages() {
           {packages.map((pkg) => {
             const Icon = pkg.icon;
             return (
-                <Card key={pkg.name} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] bg-card">
-                    <CardHeader className="flex-row items-center gap-4 p-6">
-                        <div className="bg-accent/10 p-3 rounded-full">
-                          <Icon className="h-6 w-6 text-red-600/90" />
+                <Card key={pkg.name} className="flex flex-col overflow-hidden rounded-lg border bg-white transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                    <CardHeader className="flex-row items-start gap-4 p-6">
+                        <div className="bg-red-100 p-3 rounded-lg">
+                          <Icon className="h-6 w-6 text-red-500" />
                         </div>
-                        <div>
-                          <CardTitle className="text-red-500">{pkg.name}</CardTitle>
-                          <CardDescription>{pkg.description}</CardDescription>
+                        <div className="flex-1">
+                          <CardTitle className="text-xl font-bold text-gray-800">{pkg.name}</CardTitle>
+                          <CardDescription className="mt-1 text-gray-600">{pkg.description}</CardDescription>
                         </div>
                     </CardHeader>
                     <CardContent className="p-0 flex-grow">
-                        <div className="relative h-72 w-full">
+                        <div className="relative h-56 w-full">
                             <Image src={pkg.image} alt={pkg.name} fill className="object-cover" data-ai-hint={pkg.aiHint} />
                         </div>
-                        <ul className="p-6 space-y-2 text-sm text-foreground/80">
+                        <ul className="p-6 space-y-3 text-md">
                           {pkg.features.map(feature => (
-                            <li key={feature} className="flex items-center gap-2">
-                              <span className="text-red-600/90 font-bold">◆</span> {feature}
+                            <li key={feature} className="flex items-center gap-3">
+                              <Check className="h-5 w-5 text-red-500 flex-shrink-0" />
+                              <span className="text-gray-700">{feature}</span>
                             </li>
                           ))}
                         </ul>
                     </CardContent>
-                    <CardFooter className="p-6 mt-auto">
-                        <Button asChild className="w-full">
+                    <CardFooter className="p-6 mt-auto bg-gray-50/50">
+                        <Button asChild className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold transition-all hover:scale-105 text-md py-3">
                            <Link href="#book">Book {pkg.name}</Link>
                         </Button>
                     </CardFooter>

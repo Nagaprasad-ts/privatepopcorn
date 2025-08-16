@@ -31,6 +31,7 @@ const bookingFormSchema = z.object({
 export function BookingForm() {
     const { toast } = useToast();
     const [submitted, setSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const form = useForm<z.infer<typeof bookingFormSchema>>({
         resolver: zodResolver(bookingFormSchema),
@@ -42,14 +43,37 @@ export function BookingForm() {
         }
     });
 
-    function onSubmit(values: z.infer<typeof bookingFormSchema>) {
-        console.log("Booking Inquiry:", values);
-        toast({
-            title: "Inquiry Sent!",
-            description: "Thank you for your interest. We will get back to you shortly.",
-        });
-        setSubmitted(true);
-        form.reset();
+    async function onSubmit(values: z.infer<typeof bookingFormSchema>) {
+        setIsSubmitting(true);
+        try {
+            const response = await fetch('/api/send-booking-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...values,
+                    date: values.date.toISOString(), // Convert date to string
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Something went wrong. Please try again.');
+            }
+
+            setSubmitted(true);
+            form.reset();
+            
+        } catch (error) {
+            console.error(error);
+            toast({
+                title: "Error",
+                description: "There was a problem sending your inquiry. Please try again later.",
+                variant: "destructive",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     }
     
     if (submitted) {
@@ -150,7 +174,9 @@ export function BookingForm() {
                                         <FormMessage />
                                     </FormItem>
                                 )}/>
-                                <Button type="submit" size="lg" className="w-full">Submit Inquiry</Button>
+                                <a href="tel:+918884447958" className="flex items-center justify-center gap-2 text-red-500 hover:text-red-600 font-semibold bg-red-100 hover:bg-red-200 transition-colors rounded-lg px-4 py-2">
+                                    Call Now
+                                </a>
                             </form>
                         </Form>
                     </CardContent>

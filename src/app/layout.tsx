@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'Sangama Celebrations',
-  description: 'Private theater and event services for your special celebrations.',
+  title: 'Private Popcorn',
+  description: 'Premium Private Theater and event services for your special celebrations.',
 };
 
 export default function RootLayout({

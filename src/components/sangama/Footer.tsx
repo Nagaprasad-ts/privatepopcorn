@@ -47,7 +47,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2 justify-center md:justify-start">
                 <MapPin className="h-4 w-4 text-accent" />
-                <span className="text-foreground/80"></span>
+                <span className="text-foreground/80">3rd Floor, #25, 60 Feet Road, Main Road, near Soda Factory, <br /> Jnana Juothi Nagar, Railway Layout, Ullal, Bangalore</span>
               </li>
             </ul>
           </div>

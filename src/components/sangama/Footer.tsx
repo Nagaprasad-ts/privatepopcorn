@@ -27,10 +27,16 @@ export function Footer() {
           
           <div className="md:justify-self-center">
             <h3 className="font-headline text-lg font-semibold text-primary">Quick Links</h3>
-            <ul className="mt-4 space-y-2 text-sm">
-              <li><Link href="#packages" className="text-foreground/80 hover:text-foreground">Packages</Link></li>
-              <li><Link href="#gallery" className="text-foreground/80 hover:text-foreground">Gallery</Link></li>
-              <li><Link href="#book" className="text-foreground/80 hover:text-foreground">Booking</Link></li>
+            <ul className="mt-4 space-x-8 text-sm flex flex-row items-start justify-center">
+              <div>
+                <li><Link href="#packages" className="text-foreground/80 hover:text-foreground">Packages</Link></li>
+                <li><Link href="#gallery" className="text-foreground/80 hover:text-foreground">Gallery</Link></li>
+                <li><Link href="#book" className="text-foreground/80 hover:text-foreground">Booking</Link></li>
+              </div>
+              <div>
+                <li><Link href="/privacy-policy" className="text-foreground/80 hover:text-foreground">Privacy Policy</Link></li>
+                <li><Link href="/terms-and-conditions" className="text-foreground/80 hover:text-foreground">Terms & Conditions</Link></li>
+              </div>
             </ul>
           </div>
 
@@ -52,8 +58,8 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-8 border-t border-primary/10 pt-4 text-center text-xs text-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Private Popcorn. All rights reserved.</p>
+        <div className="mt-8 border-t border-primary/10 pt-4 text-center text-md text-foreground/60">
+          <p>&copy; {new Date().getFullYear()} Private Popcorn. All rights reserved. <span className="italic">Designed & Developed by <Link href='https://nagaprasad-ts.github.io/portfolio/' target="_blank" rel="noopener noreferrer" className="underline decoration-blue-500 text-blue-500 font-semibold">Nagaprasad T S</Link></span></p>
         </div>
       </div>
     </footer>

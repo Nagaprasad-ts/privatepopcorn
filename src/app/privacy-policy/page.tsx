@@ -189,7 +189,7 @@ export default function PrivacyPolicy({ lastUpdated = "September 24, 2025" }: Pr
                     <h2 className="text-2xl font-semibold">10. Contact Us</h2>
                     <p className="mt-3">If you have questions, concerns, or requests about this Privacy Policy or your data, please contact:</p>
                     <address className="not-italic mt-3 text-sm leading-relaxed">
-                    <div><strong>Email:</strong> <a href="mailto:celebrationssangama@gmail.com" className="text-indigo-600 hover:underline">celebrationssangama@gmail.com</a></div>
+                    <div><strong>Email:</strong> <a href="mailto:privatepopcorn913@gmail.com" className="text-indigo-600 hover:underline">privatepopcorn913@gmail.com</a></div>
                     <div className="mt-1"><strong>Address:</strong> 3rd Floor, #25, 60 Feet Road, Main Road, near Soda Factory, Jnana Juothi Nagar, Railway Layout, Ullal, Bangalore</div>
                     <div className="mt-1"><strong>Phone:</strong> 8884447958</div>
                     </address>

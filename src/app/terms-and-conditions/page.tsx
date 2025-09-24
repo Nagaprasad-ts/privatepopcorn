@@ -117,7 +117,7 @@ const App = () => {
                     If you have questions about these Terms, please contact us at:
                   </p>
                   <address className="not-italic mt-3 text-sm leading-relaxed">
-                    <div><strong className="text-gray-900 dark:text-white">Email:</strong> <a href="mailto:celebrationssangama@gmail.com" className="text-indigo-600 dark:text-indigo-400 hover:underline">celebrationssangama@gmail.com</a></div>
+                    <div><strong className="text-gray-900 dark:text-white">Email:</strong> <a href="mailto:privatepopcorn913@gmail.com" className="text-indigo-600 dark:text-indigo-400 hover:underline">privatepopcorn913@gmail.com</a></div>
                     <div className="mt-1"><strong className="text-gray-900 dark:text-white">Address:</strong> 3rd Floor, #25, 60 Feet Road, Main Road, near Soda Factory, Jnana Juothi Nagar, Railway Layout, Ullal, Bangalore</div>
                     <div className="mt-1"><strong className="text-gray-900 dark:text-white">Phone:</strong> <a href="tel:8884447958" className="text-indigo-600 dark:text-indigo-400 hover:underline">8884447958</a></div>
                   </address>

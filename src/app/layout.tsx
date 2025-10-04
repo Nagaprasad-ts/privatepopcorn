@@ -1,6 +1,8 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
+import Image from "next/image";
+import whatsApp from "@/images/whatsapp.png";
 
 export const metadata: Metadata = {
   title: 'Private Popcorn',
@@ -21,6 +23,15 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         {children}
+        <div className="fixed bottom-4 right-4 z-50 p-4 bg-white rounded-full shadow-lg border border-gray-200">
+          <Image
+            src={whatsApp}
+            alt="WhatsApp Contact"
+            width={50}
+            height={50}
+            className="cursor-pointer drop-shadow-lg hover:scale-105 transition-transform duration-200"
+          />
+        </div>
         <Toaster />
       </body>
     </html>

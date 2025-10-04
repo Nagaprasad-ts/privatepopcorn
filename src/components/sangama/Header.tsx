@@ -26,8 +26,8 @@ export function Header() {
           <Image
             src={PrivatePopcorn}
             alt="Private Popcorn"
-            width={100}
-            height={100}
+            width={60}
+            height={50}
           />
           <span className="font-headline text-xl font-bold text-red-500 tracking-tight">
             Private Popcorn

@@ -36,6 +36,7 @@ export function Footer() {
               <div>
                 <li><Link href="/privacy-policy" className="text-foreground/80 hover:text-foreground">Privacy Policy</Link></li>
                 <li><Link href="/terms-and-conditions" className="text-foreground/80 hover:text-foreground">Terms & Conditions</Link></li>
+                <li><Link href="/cancellation-and-refund" className="text-foreground/80 hover:text-foreground">Cancellation & Refund</Link></li>
               </div>
             </ul>
           </div>
